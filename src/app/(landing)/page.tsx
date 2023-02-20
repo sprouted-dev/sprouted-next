@@ -1,5 +1,9 @@
 import WordCarousel from "../../components/word-carousel";
 
+export const config = {
+  runtime: "experimental-edge",
+};
+
 export default function Landing() {
   const phrases = [
     "Free Range Developers.",
