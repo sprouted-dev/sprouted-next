@@ -1,6 +1,6 @@
 import WordCarousel from "../../components/word-carousel";
 
-export default function Home() {
+export default function Landing() {
   const phrases = [
     "Free Range Developers.",
     "No Cubicles.",
