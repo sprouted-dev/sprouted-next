@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 
 export enum ColorScheme {
@@ -9,22 +9,9 @@ export enum ColorScheme {
 }
 
 export default function ToggleDarkMode() {
-  let storedColorScheme = ColorScheme.Light;
-  let systemPrefersDark = false;
-  if (typeof window !== "undefined") {
-    storedColorScheme = window.localStorage.getItem("theme") as ColorScheme;
-    systemPrefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-  }
+  const isClient = typeof window !== "undefined";
 
-  const preferredColorScheme =
-    storedColorScheme ||
-    (!storedColorScheme && systemPrefersDark
-      ? ColorScheme.Dark
-      : ColorScheme.Light);
-
-  const [colorMode, toggleColorMode] = useState(preferredColorScheme);
+  const [colorMode, toggleColorMode] = useState(ColorScheme.Light);
 
   const updateColorScheme = () => {
     const newColorScheme =
@@ -34,6 +21,26 @@ export default function ToggleDarkMode() {
     }
     toggleColorMode(newColorScheme);
   };
+  useEffect(() => {
+    function updateColorPreference() {
+      const storedColorScheme = window.localStorage.getItem(
+        "theme"
+      ) as ColorScheme;
+      const systemPrefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const preferredColorScheme =
+        storedColorScheme ||
+        (!storedColorScheme && systemPrefersDark
+          ? ColorScheme.Dark
+          : ColorScheme.Light);
+      toggleColorMode(preferredColorScheme);
+    }
+    if (isClient) {
+      updateColorPreference();
+    }
+  }, [isClient]);
+
   useEffect(() => {
     if (colorMode === ColorScheme.Dark) {
       document.documentElement.classList.add(ColorScheme.Dark);
