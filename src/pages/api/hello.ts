@@ -9,15 +9,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  return new Response(
-    JSON.stringify({
-      name: process.env.NEXT_RUNTIME,
-    }),
-    {
-      status: 200,
-      headers: {
-        "content-type": "application/json",
-      },
-    }
-  );
+  const { name } = req.query;
+  res.status(200).json({ name: name as string });
 }
