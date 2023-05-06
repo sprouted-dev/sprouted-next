@@ -1,5 +1,5 @@
 import AppBar from "@/components/appbar";
-import { Nunito } from "@next/font/google";
+import { Nunito } from "next/font/google";
 import "../../styles/globals.css";
 
 const nunito = Nunito({
