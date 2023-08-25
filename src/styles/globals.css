@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --account-center-position-right: 3rem;
+    --account-center-position-top: -0.8rem;
+  }
+}
 @layer utilities {
   .bg-sprouted {
     height: 100%;

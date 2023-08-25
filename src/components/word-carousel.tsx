@@ -8,9 +8,9 @@ export default function WordCarousel({ phrases }: WordCarouselProps) {
         <div className={`relative animate-[rotate_10s_ease-in-out_infinite]`}>
           {phrases.map((phrase, index) => (
             <div className="block h-20" key={index}>
-              <h1 className="text-2xl text-slate-50 md:text-4xl xl:text-6xl">
+              <h3 className="text-2xl text-slate-50 md:text-4xl xl:text-6xl">
                 {phrase}
-              </h1>
+              </h3>
             </div>
           ))}
         </div>

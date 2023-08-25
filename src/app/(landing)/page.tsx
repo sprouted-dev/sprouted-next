@@ -1,4 +1,4 @@
-import WordCarousel from "../../components/word-carousel";
+import WordCarousel from "@/components/word-carousel";
 
 export default function Landing() {
   const phrases = [
@@ -6,7 +6,6 @@ export default function Landing() {
     "No Cubicles.",
     "Fresh Farm To Office.",
     "Ethically Raised.",
-    "Free Range Developers.",
   ];
   return (
     <div className="flex h-screen items-center pl-16">
