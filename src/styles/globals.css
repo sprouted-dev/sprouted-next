@@ -105,12 +105,27 @@
     z-index: -1;
   }
   
-  /* Fix GitHub button hover background inheritance */
+  /* Fix GitHub button hover states */
   .hover\:bg-slate-200:hover {
     background-image: none !important;
   }
   
   .dark .dark\:hover\:bg-zinc-800:hover {
     background-image: none !important;
+  }
+  
+  /* GitHub star button hover effect */
+  .github-star-btn {
+    background-image: none !important;
+  }
+  
+  .github-star-btn:hover {
+    background-color: rgba(130, 179, 102, 0.1) !important;
+    background-image: none !important;
+    transform: translateY(-1px);
+  }
+  
+  .dark .github-star-btn:hover {
+    background-color: rgba(130, 179, 102, 0.2) !important;
   }
 }
