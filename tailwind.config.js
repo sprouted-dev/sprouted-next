@@ -32,10 +32,10 @@ module.exports = {
         // Keep existing rotate animation
         rotate: {
           "0%, 20%": { transform: "translateY(0)" },
-          "25%, 45%": { transform: "translateY(-75px)" },
-          "50%, 70%": { transform: "translateY(-150px)" },
-          "75%, 95%": { transform: "translateY(-225px)" },
-          "100%": { transform: "translateY(-300px)" },
+          "25%, 45%": { transform: "translateY(-32px)" },
+          "50%, 70%": { transform: "translateY(-64px)" },
+          "75%, 95%": { transform: "translateY(-96px)" },
+          "100%": { transform: "translateY(-128px)" },
         },
         // Add new fade animation for weather content
         fadeInOut: {

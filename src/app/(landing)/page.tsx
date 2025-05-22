@@ -10,13 +10,7 @@ export default function Landing() {
   ];
   
   return (
-    <div 
-      className="min-h-screen"
-      style={{ 
-        backgroundColor: 'var(--color-background)', 
-        color: 'var(--color-text-primary)' 
-      }}
-    >
+    <div className="min-h-screen bg-nature-daylight dark:bg-nature-night text-nature-night dark:text-nature-daylight">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-nature-daylight to-green-50 dark:from-nature-night dark:to-slate-800">
         <div className="container mx-auto px-6 py-20">
@@ -33,10 +27,8 @@ export default function Landing() {
             
             {/* Rotating Headlines */}
             <div className="mb-8">
-              <div className="flex h-16 items-center justify-center">
-                <div className="text-2xl text-nature-mist dark:text-nature-fog">
-                  <WordCarousel phrases={phrases} />
-                </div>
+              <div className="flex items-center justify-center">
+                <WordCarousel phrases={phrases} />
               </div>
             </div>
             
@@ -51,13 +43,13 @@ export default function Landing() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <a 
                 href="#install" 
-                className="sprouted-btn text-lg px-8 py-4"
+                className="sprouted-btn text-lg"
               >
                 <span>⚡</span> Quick Install
               </a>
               <a 
                 href="https://github.com/sprouted-dev/garden" 
-                className="sprouted-btn bg-white text-sprouted border-2 border-sprouted hover:bg-sprouted hover:text-white text-lg px-8 py-4"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 bg-white text-sprouted border-2 border-sprouted hover:bg-sprouted hover:text-white"
               >
                 <span>⭐</span> Star on GitHub
               </a>

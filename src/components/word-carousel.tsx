@@ -3,14 +3,14 @@ export interface WordCarouselProps {
 }
 export default function WordCarousel({ phrases }: WordCarouselProps) {
   return (
-    <div className="relative h-20 w-full">
-      <div className="absolute top-0 h-20 overflow-hidden leading-[20]">
-        <div className={`relative animate-[rotate_10s_ease-in-out_infinite]`}>
+    <div className="relative h-8 w-full max-w-2xl mx-auto">
+      <div className="absolute top-0 h-8 overflow-hidden">
+        <div className={`relative animate-[rotate_16s_ease-in-out_infinite]`}>
           {phrases.map((phrase, index) => (
-            <div className="block h-20" key={index}>
-              <h1 className="text-2xl text-slate-50 md:text-4xl xl:text-6xl">
+            <div className="block h-8 flex items-center justify-center" key={index}>
+              <span className="text-2xl font-medium text-nature-mist dark:text-nature-fog">
                 {phrase}
-              </h1>
+              </span>
             </div>
           ))}
         </div>
