@@ -10,6 +10,16 @@ export default function AppBar() {
         sprouted
       </h1>
       <div className="flex-grow"></div>
+      <a 
+        href="https://github.com/sprouted-dev/garden" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mr-4 flex items-center gap-2 rounded-lg px-3 py-2 text-slate-700 transition-colors hover:bg-slate-200 dark:text-slate-50 dark:hover:bg-zinc-800"
+        title="Star on GitHub"
+      >
+        <span>⭐</span>
+        <span className="hidden sm:inline">GitHub</span>
+      </a>
       <ToggleDarkMode />
     </div>
   );

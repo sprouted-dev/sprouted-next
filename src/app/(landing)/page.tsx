@@ -49,7 +49,9 @@ export default function Landing() {
               </a>
               <a 
                 href="https://github.com/sprouted-dev/garden" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 bg-white text-sprouted border-2 border-sprouted hover:bg-sprouted hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 bg-white dark:bg-nature-twilight text-sprouted dark:text-sprouted border-2 border-sprouted hover:bg-sprouted hover:text-white dark:hover:bg-sprouted dark:hover:text-white"
               >
                 <span>⭐</span> Star on GitHub
               </a>
