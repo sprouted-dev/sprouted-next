@@ -1,3 +1,5 @@
+"use client";
+
 import WordCarousel from "../../components/word-carousel";
 
 export default function Landing() {
