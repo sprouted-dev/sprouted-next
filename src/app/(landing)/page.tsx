@@ -216,15 +216,69 @@ export default function Landing() {
           
           <div className="sprouted-card max-w-md mx-auto p-6">
             <h3 className="font-bold mb-4">Get Early Access</h3>
-            <div className="flex gap-2">
+            <form id="early-access-form" className="flex gap-2">
               <input 
                 type="email" 
+                name="email"
                 placeholder="your@email.com" 
+                required
                 className="flex-1 px-3 py-2 rounded border border-nature-fog bg-white dark:bg-nature-twilight dark:border-nature-mist text-nature-night dark:text-nature-daylight"
               />
-              <button className="sprouted-btn">Notify Me</button>
-            </div>
+              <button type="submit" className="sprouted-btn" id="submit-btn">
+                Notify Me
+              </button>
+            </form>
+            <div id="form-message" className="mt-2 text-sm"></div>
           </div>
+          
+          <script dangerouslySetInnerHTML={{
+            __html: `
+              document.getElementById('early-access-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const form = e.target;
+                const email = form.email.value;
+                const submitBtn = document.getElementById('submit-btn');
+                const messageDiv = document.getElementById('form-message');
+                
+                // Update button state
+                submitBtn.textContent = 'Submitting...';
+                submitBtn.disabled = true;
+                messageDiv.textContent = '';
+                
+                try {
+                  const response = await fetch('/api/early-access', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email })
+                  });
+                  
+                  const data = await response.json();
+                  
+                  if (response.ok) {
+                    messageDiv.textContent = data.message;
+                    messageDiv.className = 'mt-2 text-sm text-green-600 dark:text-green-400';
+                    
+                    if (!data.duplicate) {
+                      form.reset();
+                    }
+                  } else {
+                    messageDiv.textContent = data.error || 'Something went wrong. Please try again.';
+                    messageDiv.className = 'mt-2 text-sm text-red-600 dark:text-red-400';
+                  }
+                } catch (error) {
+                  messageDiv.textContent = 'Network error. Please check your connection and try again.';
+                  messageDiv.className = 'mt-2 text-sm text-red-600 dark:text-red-400';
+                }
+                
+                // Reset button
+                submitBtn.textContent = 'Notify Me';
+                submitBtn.disabled = false;
+              });
+            `
+          }} />
         </div>
       </section>
     </div>
