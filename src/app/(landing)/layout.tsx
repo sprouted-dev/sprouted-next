@@ -22,7 +22,7 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <div className="bg-sprouted">
+        <div className="">
           <AppBar />
           <div className="">{children}</div>
         </div>
