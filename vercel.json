@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "src": "/weather",
+      "dest": "/api/weather"
+    },
+    {
+      "src": "/sprout-cli", 
+      "dest": "/api/sprout-cli"
+    },
+    {
+      "src": "/install.sh",
+      "dest": "/install.sh"
+    }
+  ]
+}
