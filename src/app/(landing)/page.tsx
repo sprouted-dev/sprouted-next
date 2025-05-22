@@ -51,7 +51,7 @@ export default function Landing() {
                 href="https://github.com/sprouted-dev/garden" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 bg-white dark:bg-nature-twilight text-sprouted dark:text-sprouted border-2 border-sprouted hover:bg-sprouted hover:text-white dark:hover:bg-sprouted dark:hover:text-white"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 bg-white/90 backdrop-blur-sm dark:bg-nature-twilight/90 text-sprouted dark:text-sprouted border-2 border-sprouted hover:bg-sprouted hover:text-white dark:hover:bg-sprouted dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-sprouted focus:ring-offset-2"
               >
                 <span>⭐</span> Star on GitHub
               </a>
@@ -143,8 +143,17 @@ export default function Landing() {
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                   <span>⚡</span> Quick Install
                 </h3>
-                <div className="bg-nature-night dark:bg-black p-4 rounded-lg text-green-400 font-mono text-sm mb-4">
-                  curl -fsSL https://sprouted.dev/install.sh | sh
+                <div className="relative bg-nature-night dark:bg-black p-4 rounded-lg text-green-400 font-mono text-sm mb-4">
+                  <code>curl -fsSL https://sprouted.dev/install.sh | sh</code>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText('curl -fsSL https://sprouted.dev/install.sh | sh')}
+                    className="absolute top-2 right-2 p-2 text-gray-400 hover:text-green-400 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
                 </div>
                 <p className="text-nature-mist dark:text-nature-fog">
                   One command installs Sprout CLI with automatic platform detection.
@@ -156,8 +165,17 @@ export default function Landing() {
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                   <span>🐹</span> Go Install
                 </h3>
-                <div className="bg-nature-night dark:bg-black p-4 rounded-lg text-blue-400 font-mono text-sm mb-4">
-                  go install sprouted.dev/sprout-cli@latest
+                <div className="relative bg-nature-night dark:bg-black p-4 rounded-lg text-blue-400 font-mono text-sm mb-4">
+                  <code>go install sprouted.dev/sprout-cli@latest</code>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText('go install sprouted.dev/sprout-cli@latest')}
+                    className="absolute top-2 right-2 p-2 text-gray-400 hover:text-blue-400 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
                 </div>
                 <p className="text-nature-mist dark:text-nature-fog">
                   Install directly with Go. Clean module paths, no GitHub clutter.
@@ -169,17 +187,44 @@ export default function Landing() {
             <div className="sprouted-card p-8 mt-8">
               <h3 className="text-xl font-bold mb-6">🌱 First Steps</h3>
               <div className="grid md:grid-cols-3 gap-4">
-                <div className="bg-nature-night dark:bg-black p-4 rounded-lg">
+                <div className="relative bg-nature-night dark:bg-black p-4 rounded-lg">
                   <div className="text-nature-mist text-sm mb-2"># Check weather</div>
                   <div className="text-yellow-400 font-mono">sprout weather</div>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText('sprout weather')}
+                    className="absolute top-2 right-2 p-1 text-gray-400 hover:text-yellow-400 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
                 </div>
-                <div className="bg-nature-night dark:bg-black p-4 rounded-lg">
+                <div className="relative bg-nature-night dark:bg-black p-4 rounded-lg">
                   <div className="text-nature-mist text-sm mb-2"># AI context</div>
                   <div className="text-blue-400 font-mono">sprout weather --for-ai</div>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText('sprout weather --for-ai')}
+                    className="absolute top-2 right-2 p-1 text-gray-400 hover:text-blue-400 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
                 </div>
-                <div className="bg-nature-night dark:bg-black p-4 rounded-lg">
+                <div className="relative bg-nature-night dark:bg-black p-4 rounded-lg">
                   <div className="text-nature-mist text-sm mb-2"># Full onboarding</div>
                   <div className="text-green-400 font-mono">sprout weather --onboard-ai</div>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText('sprout weather --onboard-ai')}
+                    className="absolute top-2 right-2 p-1 text-gray-400 hover:text-green-400 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
