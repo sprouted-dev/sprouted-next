@@ -14,7 +14,8 @@ export default function AppBar() {
         href="https://github.com/sprouted-dev/garden" 
         target="_blank"
         rel="noopener noreferrer"
-        className="mr-4 flex items-center gap-2 rounded-lg px-3 py-2 text-slate-700 transition-colors hover:bg-slate-200 dark:text-slate-50 dark:hover:bg-zinc-800"
+        className="mr-4 flex items-center gap-2 rounded-lg px-3 py-2 text-slate-700 transition-colors hover:bg-slate-200 hover:bg-none dark:text-slate-50 dark:hover:bg-zinc-800"
+        style={{ backgroundImage: 'none' }}
         title="Star on GitHub"
       >
         <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

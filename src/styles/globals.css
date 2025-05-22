@@ -104,4 +104,13 @@
     background-color: rgba(0, 0, 0, 0.4);
     z-index: -1;
   }
+  
+  /* Fix GitHub button hover background inheritance */
+  .hover\:bg-slate-200:hover {
+    background-image: none !important;
+  }
+  
+  .dark .dark\:hover\:bg-zinc-800:hover {
+    background-image: none !important;
+  }
 }
