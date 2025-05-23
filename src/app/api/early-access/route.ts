@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
@@ -9,28 +9,25 @@ interface EarlyAccessSubmission {
   ip?: string;
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
+export async function POST(request: NextRequest) {
   try {
-    const { email } = req.body;
+    const body = await request.json();
+    const { email } = body;
 
     // Basic email validation
     if (!email || !email.includes('@')) {
-      return res.status(400).json({ error: 'Valid email address required' });
+      return NextResponse.json(
+        { error: 'Valid email address required' },
+        { status: 400 }
+      );
     }
 
     // Create submission object
     const submission: EarlyAccessSubmission = {
       email: email.toLowerCase().trim(),
       timestamp: new Date().toISOString(),
-      userAgent: req.headers['user-agent'],
-      ip: req.headers['x-forwarded-for'] as string || req.connection.remoteAddress,
+      userAgent: request.headers.get('user-agent') || undefined,
+      ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || undefined,
     };
 
     // Store in simple JSON file for now
@@ -52,7 +49,7 @@ export default async function handler(
     // Check for duplicate email
     const emailExists = existingData.some(item => item.email === submission.email);
     if (emailExists) {
-      return res.status(200).json({ 
+      return NextResponse.json({ 
         message: 'Thanks! You\'re already on the list for Weather Station early access.',
         duplicate: true 
       });
@@ -66,13 +63,16 @@ export default async function handler(
 
     console.log(`New Weather Station early access signup: ${submission.email}`);
 
-    return res.status(200).json({ 
+    return NextResponse.json({ 
       message: 'Thanks for your interest! We\'ll notify you when Weather Station is ready.',
       success: true 
     });
 
   } catch (error) {
     console.error('Early access signup error:', error);
-    return res.status(500).json({ error: 'Something went wrong. Please try again.' });
+    return NextResponse.json(
+      { error: 'Something went wrong. Please try again.' },
+      { status: 500 }
+    );
   }
 }

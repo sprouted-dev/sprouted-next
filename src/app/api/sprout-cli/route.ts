@@ -1,14 +1,14 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(request: NextRequest) {
   // Check if this is a Go module request
-  const userAgent = req.headers['user-agent'] || '';
-  const goGet = req.query['go-get'];
+  const userAgent = request.headers.get('user-agent') || '';
+  const { searchParams } = new URL(request.url);
+  const goGet = searchParams.get('go-get');
   
   if (goGet === '1' && userAgent.includes('Go-http-client')) {
     // Serve Go module meta tags
-    res.setHeader('Content-Type', 'text/html');
-    res.status(200).send(`
+    return new NextResponse(`
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +17,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 </head>
 <body>Go package: sprouted.dev/sprout-cli</body>
 </html>
-    `);
+    `, {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/html',
+      },
+    });
   } else {
     // Redirect to documentation
-    res.redirect(302, 'https://pkg.go.dev/sprouted.dev/sprout-cli');
+    return NextResponse.redirect('https://pkg.go.dev/sprouted.dev/sprout-cli', 302);
   }
 }

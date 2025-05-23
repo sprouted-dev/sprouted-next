@@ -50,12 +50,16 @@ export default function ToggleDarkMode() {
   }, [colorMode]);
 
   return (
-    <div onClick={updateColorScheme} className="flex items-center">
+    <button 
+      onClick={updateColorScheme} 
+      className="flex items-center p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
+      aria-label="Toggle theme"
+    >
       {colorMode === ColorScheme.Light ? (
-        <MoonIcon className="h-6 w-6 text-slate-700" />
+        <MoonIcon className="h-6 w-6 text-slate-700 dark:text-slate-50" />
       ) : (
-        <SunIcon className="h-6 w-6 text-slate-50" />
+        <SunIcon className="h-6 w-6 text-slate-700 dark:text-slate-50" />
       )}
-    </div>
+    </button>
   );
 }

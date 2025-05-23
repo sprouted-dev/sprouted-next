@@ -1,0 +1,366 @@
+/* tailwind.css - Tailwind CSS v4 Theme Configuration */
+@import "tailwindcss";
+@import "tailwindcss/utilities";
+
+@theme {
+  /* Core Sprouted Brand Colors */
+  --color-sprouted: #82b366;
+  --color-sprouted-robot: #6b7280;
+  --color-sprouted-accent: #60a5fa;
+  --color-sprouted-dark: #000000;
+  --color-sprouted-light: #f9fafb;
+
+  /* Garden Palette - UI components and garden visualization */
+  --color-garden-sprout: #82b366;
+  --color-garden-soil: #5d4037;
+  --color-garden-sun: #ffc107;
+  --color-garden-sky: #90caf9;
+  --color-garden-stone: #9e9e9e;
+
+  /* Growth Stages - Progress indicators and versioning */
+  --color-growth-seed: #8d6e63;
+  --color-growth-sprout: #a5d6a7;
+  --color-growth-sapling: #66bb6a;
+  --color-growth-mature: #43a047;
+  --color-growth-ancient: #2e7d32;
+
+  /* Weather States - Status indicators and notifications */
+  --color-weather-sunny: #ffd54f;
+  --color-weather-cloudy: #bdbdbd;
+  --color-weather-rainy: #64b5f6;
+  --color-weather-stormy: #5c6bc0;
+  --color-weather-drought: #ef5350;
+
+  /* Ecosystem - System components and architecture visualization */
+  --color-eco-forest: #2e7d32;
+  --color-eco-meadow: #7cb342;
+  --color-eco-pond: #039be5;
+  --color-eco-path: #8d6e63;
+  --color-eco-clearing: #f9fbe7;
+
+  /* Neutral Palette - UI backgrounds, text, and borders */
+  --color-nature-night: #1e293b;
+  --color-nature-twilight: #334155;
+  --color-nature-mist: #64748b;
+  --color-nature-fog: #cbd5e1;
+  --color-nature-daylight: #f8fafc;
+
+  /* Extended Opacity Values */
+  --opacity-15: 0.15;
+  --opacity-35: 0.35;
+  --opacity-85: 0.85;
+
+  /* Custom Box Shadows themed around garden elements */
+  --shadow-soil: 0 2px 4px 0 rgb(93 64 55 / 0.1);
+  --shadow-sprout:
+    0 4px 6px -1px rgb(130 179 102 / 0.1),
+    0 2px 4px -1px rgb(130 179 102 / 0.06);
+  --shadow-forest:
+    0 10px 15px -3px rgb(46 125 50 / 0.1), 0 4px 6px -2px rgb(46 125 50 / 0.05);
+  --shadow-meadow:
+    0 20px 25px -5px rgb(124 179 66 / 0.1),
+    0 10px 10px -5px rgb(124 179 66 / 0.04);
+
+  /* Custom Animation Durations */
+  --animate-grow-slow: grow 3s ease-out forwards;
+  --animate-grow-medium: grow 1.5s ease-out forwards;
+  --animate-grow-fast: grow 0.7s ease-out forwards;
+  --animate-wilt: wilt 0.5s ease-in forwards;
+  --animate-rain: rain 1s infinite linear;
+  --animate-rotate-words: rotate 20s infinite;
+
+  /* Gradients themed around natural elements */
+  --gradient-sprout: linear-gradient(to right, #82b366, #a5d6a7);
+  --gradient-forest: linear-gradient(to right, #2e7d32, #66bb6a);
+  --gradient-sky: linear-gradient(to bottom, #64b5f6, #90caf9);
+  --gradient-sunset: linear-gradient(to right, #ffd54f, #ef5350);
+  --gradient-soil: linear-gradient(to bottom, #8d6e63, #5d4037);
+}
+
+/* Keyframe Animations */
+@keyframes grow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes wilt {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes rotate {
+  0%, 18% {
+    transform: translateY(0%);
+  }
+  20%, 38% {
+    transform: translateY(-100%);
+  }
+  40%, 58% {
+    transform: translateY(-200%);
+  }
+  60%, 78% {
+    transform: translateY(-300%);
+  }
+  80%, 98% {
+    transform: translateY(-400%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+}
+
+/* Dark Mode Configuration */
+@variant dark (&:where(.dark, .dark *));
+
+/* Theme-specific CSS Custom Properties for Light/Dark switching */
+:root {
+  /* Light theme variables (default) */
+  --theme-primary: var(--color-sprouted);
+  --theme-secondary: var(--color-growth-sapling);
+  --theme-accent: var(--color-sprouted-accent);
+  --theme-muted: var(--color-garden-stone);
+
+  --theme-success: var(--color-weather-sunny);
+  --theme-info: var(--color-weather-rainy);
+  --theme-warning: var(--color-weather-stormy);
+  --theme-error: var(--color-weather-drought);
+
+  --theme-background: var(--color-nature-daylight);
+  --theme-surface: #ffffff;
+  --theme-border: var(--color-nature-fog);
+
+  --theme-text-primary: var(--color-nature-night);
+  --theme-text-secondary: var(--color-nature-mist);
+  --theme-text-on-primary: #ffffff;
+}
+
+.dark {
+  /* Dark theme variables */
+  --theme-primary: var(--color-sprouted);
+  --theme-secondary: var(--color-growth-mature);
+  --theme-accent: var(--color-sprouted-accent);
+  --theme-muted: var(--color-nature-mist);
+
+  --theme-success: var(--color-weather-sunny);
+  --theme-info: var(--color-weather-rainy);
+  --theme-warning: #7c4dff;
+  --theme-error: #ff5252;
+
+  --theme-background: var(--color-nature-night);
+  --theme-surface: var(--color-nature-twilight);
+  --theme-border: #475569;
+
+  --theme-text-primary: var(--color-nature-daylight);
+  --theme-text-secondary: var(--color-nature-fog);
+  --theme-text-on-primary: var(--color-nature-night);
+}
+
+/* Component-specific themed utilities */
+@layer components {
+  .sprouted-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 font-medium transition-all duration-300;
+    background-color: #82b366;
+    color: white;
+    @apply hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    box-shadow: 0 4px 6px -1px rgb(130 179 102 / 0.1), 0 2px 4px -1px rgb(130 179 102 / 0.06);
+  }
+  
+  .sprouted-btn:focus {
+    --tw-ring-color: #82b366;
+  }
+
+  .sprouted-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 font-medium transition-all duration-300;
+    @apply bg-green-500 hover:bg-green-600 text-white;
+  }
+
+  .sprouted-card {
+    @apply overflow-hidden rounded-lg;
+    @apply bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600;
+    @apply shadow-sm;
+  }
+
+  .sprouted-input {
+    @apply rounded-md px-3 py-2 transition-all duration-200;
+    @apply bg-white dark:bg-slate-800 text-slate-900 dark:text-white;
+    @apply border border-slate-300 dark:border-slate-600;
+    @apply focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500;
+  }
+
+  .sprouted-badge {
+    @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium;
+  }
+
+  .sprouted-badge.success {
+    @apply bg-yellow-400 text-slate-900;
+  }
+
+  .sprouted-badge.info {
+    @apply bg-blue-500 text-white;
+  }
+
+  .sprouted-badge.warning {
+    @apply bg-purple-600 text-white;
+  }
+
+  .sprouted-badge.error {
+    @apply bg-red-500 text-white;
+  }
+
+  /* Weather badges for status indicators */
+  .weather-badge {
+    @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm font-medium;
+  }
+
+  .weather-badge.weather-sunny {
+    @apply bg-yellow-400 text-slate-900;
+  }
+
+  .weather-badge.weather-cloudy {
+    @apply bg-gray-400 text-slate-900;
+  }
+
+  .weather-badge.weather-rainy {
+    @apply bg-blue-500 text-white;
+  }
+
+  .weather-badge.weather-stormy {
+    @apply bg-purple-600 text-white;
+  }
+}
+
+/* Color Utilities */
+@layer utilities {
+  /* Animation utilities */
+  .animate-rotate-words {
+    animation: var(--animate-rotate-words);
+  }
+
+  /* Text colors */
+  .text-sprouted {
+    color: var(--color-sprouted);
+  }
+  
+  .text-nature-night {
+    color: var(--color-nature-night);
+  }
+  
+  .text-nature-twilight {
+    color: var(--color-nature-twilight);
+  }
+  
+  .text-nature-mist {
+    color: var(--color-nature-mist);
+  }
+  
+  .text-nature-fog {
+    color: var(--color-nature-fog);
+  }
+  
+  .text-nature-daylight {
+    color: var(--color-nature-daylight);
+  }
+
+  /* Background colors */
+  .bg-nature-night {
+    background-color: var(--color-nature-night);
+  }
+  
+  .bg-nature-twilight {
+    background-color: var(--color-nature-twilight);
+  }
+  
+  .bg-nature-mist {
+    background-color: var(--color-nature-mist);
+  }
+  
+  .bg-nature-fog {
+    background-color: var(--color-nature-fog);
+  }
+  
+  .bg-nature-daylight {
+    background-color: var(--color-nature-daylight);
+  }
+
+  /* Border colors */
+  .border-nature-fog {
+    border-color: var(--color-nature-fog);
+  }
+  
+  .border-nature-mist {
+    border-color: var(--color-nature-mist);
+  }
+  
+  .border-sprouted {
+    border-color: var(--color-sprouted);
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-sprout {
+    background-image: var(--gradient-sprout);
+  }
+
+  .bg-gradient-forest {
+    background-image: var(--gradient-forest);
+  }
+
+  .bg-gradient-sky {
+    background-image: var(--gradient-sky);
+  }
+
+  .bg-gradient-sunset {
+    background-image: var(--gradient-sunset);
+  }
+
+  .bg-gradient-soil {
+    background-image: var(--gradient-soil);
+  }
+
+  /* Text shadow utilities */
+  .text-shadow-sprout {
+    text-shadow: 0 1px 2px
+      color-mix(in srgb, var(--color-sprouted) 25%, transparent);
+  }
+
+  /* Animation utilities */
+  .animate-grow-slow {
+    animation: var(--animate-grow-slow);
+  }
+
+  .animate-grow-medium {
+    animation: var(--animate-grow-medium);
+  }
+
+  .animate-grow-fast {
+    animation: var(--animate-grow-fast);
+  }
+
+  .animate-wilt {
+    animation: var(--animate-wilt);
+  }
+
+  .animate-rain {
+    animation: var(--animate-rain);
+  }
+}
