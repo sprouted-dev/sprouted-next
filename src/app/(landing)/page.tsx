@@ -152,7 +152,7 @@ export default function Landing() {
                 <div className="text-4xl mb-4">📊</div>
                 <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">Context Monitoring</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">
-                  Real-time tracking of Claude's context usage with visual indicators
+                  Real-time tracking of Claude&apos;s context usage with visual indicators
                 </p>
               </div>
               <div className="sprouted-card p-6">
@@ -175,7 +175,7 @@ export default function Landing() {
               <h3 className="text-xl font-bold mb-6 text-slate-900 dark:text-white">Quick Setup</h3>
               <div className="space-y-4">
                 <div className="relative bg-slate-800 dark:bg-black p-4 rounded-lg">
-                  <div className="text-gray-400 text-sm mb-2"># Check Claude's context usage</div>
+                  <div className="text-gray-400 text-sm mb-2"># Check Claude&apos;s context usage</div>
                   <div className="text-blue-400 font-mono">sprout weather context-status</div>
                   <button 
                     onClick={() => navigator.clipboard.writeText('sprout weather context-status')}
