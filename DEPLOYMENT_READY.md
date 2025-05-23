@@ -3,11 +3,13 @@
 ## What's Been Updated
 
 ### 🎨 **Theme System**
-- ✅ Updated `tailwind.config.js` with our beautiful Weather System theme
-- ✅ Added CSS custom properties for light/dark mode
+- ✅ Migrated to Tailwind CSS 4.0 (beta)
+- ✅ Refactored all component classes for Tailwind CSS 4 compatibility
+- ✅ Fixed dark mode implementation using class-based approach
+- ✅ Updated PostCSS configuration for @tailwindcss/postcss
 - ✅ Integrated `.sprouted-btn`, `.sprouted-card`, `.weather-badge` components
 - ✅ Weather condition colors (sunny, rainy, stormy, drought)
-- ✅ Preserved existing WordCarousel animation
+- ✅ Rewrote WordCarousel with React state management
 
 ### 🌦️ **Content Migration**
 - ✅ Updated landing page with Weather System content
@@ -47,12 +49,15 @@ Once deployed, test these features:
 
 ### ✅ **Website Features**
 - [ ] Site loads at https://sprouted.dev
-- [ ] Dark/light mode toggle works (if you have the toggle component)
-- [ ] Rotating phrases animate correctly
+- [ ] Dark/light mode toggle works
+- [ ] Rotating phrases animate correctly (React-based)
 - [ ] Weather demo section displays properly
 - [ ] Installation commands are correct
 - [ ] Email signup form works
 - [ ] All links point to correct URLs
+- [ ] Cards have proper dark mode backgrounds
+- [ ] Text colors are correct in both modes
+- [ ] Green brand color (#82b366) displays correctly
 
 ### ✅ **Go Module Features**
 ```bash
@@ -91,20 +96,25 @@ After successful deployment:
 ```
 ~/sprouted/sprouted-website/
 ├── src/
-│   ├── app/
+│   ├── app/                       # ✅ Using App Router (Next.js 15)
 │   │   ├── (landing)/
+│   │   │   ├── layout.tsx         # ✅ Root layout with providers
 │   │   │   └── page.tsx           # ✅ Updated with Weather System
-│   │   └── head.tsx               # ✅ Updated with Go modules
-│   ├── pages/api/
-│   │   ├── weather.ts             # ✅ New Go module endpoint
-│   │   └── sprout-cli.ts          # ✅ New Go module endpoint
-│   └── components/
-│       └── word-carousel.tsx      # ✅ Preserved existing component
+│   │   └── api/                   # ✅ App Router API routes
+│   │       ├── weather/
+│   │       │   └── route.ts       # ✅ Go module endpoint
+│   │       └── sprout-cli/
+│   │           └── route.ts       # ✅ Go module endpoint
+│   ├── components/
+│   │   └── word-carousel.tsx      # ✅ Rewritten with React state
+│   └── styles/
+│       └── tailwind.css           # ✅ Refactored for Tailwind CSS 4
 ├── public/
 │   └── install.sh                 # ✅ Installation script
+├── postcss.config.js              # ✅ Updated for Tailwind CSS 4
 ├── tailwind.config.js             # ✅ Updated with Weather theme
-├── package.json                   # ✅ Ready for deployment
-└── UPGRADE_PLAN.md               # 📋 Future upgrade roadmap
+├── package.json                   # ✅ Next.js 15, Tailwind CSS 4
+└── UPGRADE_PLAN.md               # ✅ Completed Phase 1 & 2
 ```
 
 ## Success Metrics
