@@ -132,6 +132,96 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* Claude Context Management Section */}
+      <section className="py-20 bg-gradient-to-br from-[#f8fafc] to-blue-50 dark:from-[#1e293b] dark:to-slate-800">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full font-semibold mb-8">
+              <span>🎉</span> NEW FEATURE
+            </div>
+            <h2 className="text-4xl font-bold mb-8 text-slate-900 dark:text-white">
+              Claude Context Management
+            </h2>
+            <p className="text-xl mb-12 text-slate-600 dark:text-slate-300">
+              Never lose your place in Claude conversations again. Intelligent context monitoring 
+              and seamless session handoffs keep your AI collaboration flowing.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="sprouted-card p-6">
+                <div className="text-4xl mb-4">📊</div>
+                <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">Context Monitoring</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">
+                  Real-time tracking of Claude's context usage with visual indicators
+                </p>
+              </div>
+              <div className="sprouted-card p-6">
+                <div className="text-4xl mb-4">🔔</div>
+                <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">Smart Alerts</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">
+                  Get notified before hitting context limits, never lose work again
+                </p>
+              </div>
+              <div className="sprouted-card p-6">
+                <div className="text-4xl mb-4">🤝</div>
+                <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">Seamless Handoffs</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">
+                  Preserve critical context and continue exactly where you left off
+                </p>
+              </div>
+            </div>
+            
+            <div className="sprouted-card p-8 text-left max-w-3xl mx-auto">
+              <h3 className="text-xl font-bold mb-6 text-slate-900 dark:text-white">Quick Setup</h3>
+              <div className="space-y-4">
+                <div className="relative bg-slate-800 dark:bg-black p-4 rounded-lg">
+                  <div className="text-gray-400 text-sm mb-2"># Check Claude's context usage</div>
+                  <div className="text-blue-400 font-mono">sprout weather context-status</div>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText('sprout weather context-status')}
+                    className="absolute top-2 right-2 p-1 text-gray-400 hover:text-blue-400 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
+                <div className="relative bg-slate-800 dark:bg-black p-4 rounded-lg">
+                  <div className="text-gray-400 text-sm mb-2"># Enable Claude integration</div>
+                  <div className="text-green-400 font-mono">sprout init --with-claude</div>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText('sprout init --with-claude')}
+                    className="absolute top-2 right-2 p-1 text-gray-400 hover:text-green-400 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
+                <div className="relative bg-slate-800 dark:bg-black p-4 rounded-lg">
+                  <div className="text-gray-400 text-sm mb-2"># Monitor in background</div>
+                  <div className="text-yellow-400 font-mono">.claude/commands/context-monitor monitor</div>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText('.claude/commands/context-monitor monitor')}
+                    className="absolute top-2 right-2 p-1 text-gray-400 hover:text-yellow-400 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <p className="mt-6 text-sm text-slate-600 dark:text-slate-300">
+                Learn more in our <a href="https://github.com/sprouted-dev/garden/blob/main/docs/features/claude-context-management.md" target="_blank" rel="noopener noreferrer" className="text-sprouted hover:underline">documentation →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Installation Section */}
       <section id="install" className="py-20">
         <div className="container mx-auto px-4 lg:px-6">
