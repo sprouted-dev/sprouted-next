@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Sprout from "../../public/assets/sprouts.png";
 import ToggleDarkMode from "./toggle-dark-mode";
 
@@ -7,12 +8,32 @@ export default function AppBar() {
     <div className="w-full bg-slate-50 transition-colors dark:bg-zinc-900 dark:transition-colors">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex h-16 items-center">
-          <Image src={Sprout} alt="sprouts" className="mr-1 h-10 w-10" />
-          <h1 className="text-2xl sm:text-3xl font-bold text-slate-700 dark:text-slate-50">
-            sprouted
-          </h1>
+          <Link href="/" className="flex items-center">
+            <Image src={Sprout} alt="sprouts" className="mr-1 h-10 w-10" />
+            <h1 className="text-2xl sm:text-3xl font-bold text-slate-700 dark:text-slate-50">
+              sprouted
+            </h1>
+          </Link>
+          
+          <nav className="hidden md:flex ml-8 space-x-6">
+            <Link 
+              href="/case-studies"
+              className="flex items-center gap-1 text-slate-700 dark:text-slate-50 hover:text-green-600 dark:hover:text-green-400 transition-colors"
+            >
+              <span className="text-sm">🌪️</span>
+              Case Studies
+            </Link>
+          </nav>
+          
           <div className="flex-grow"></div>
           <div className="flex items-center gap-2">
+            <Link 
+              href="/case-studies"
+              className="md:hidden flex items-center gap-1 rounded-lg px-2 py-2 text-slate-700 transition-colors hover:bg-slate-200 dark:text-slate-50 dark:hover:bg-zinc-800"
+            >
+              <span className="text-sm">🌪️</span>
+              <span className="text-sm">Stories</span>
+            </Link>
             <a 
               href="https://github.com/sprouted-dev/garden" 
               target="_blank"
