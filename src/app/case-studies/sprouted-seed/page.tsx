@@ -61,7 +61,7 @@ export default function SproutedSeedCaseStudy() {
           <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg my-8">
             <h3 className="text-green-800 dark:text-green-300 mt-0">The Developer</h3>
             <p className="mb-0">
-              Someone who spent years feeling like "bamboo in an oak tree interview" - 
+              Someone who spent years feeling like &ldquo;bamboo in an oak tree interview&rdquo; - 
               broad pattern recognition over memorization, systems thinking over syntax recall. 
               Finally found their moment with AI partnership.
             </p>
@@ -70,7 +70,7 @@ export default function SproutedSeedCaseStudy() {
           <h3>The Trigger</h3>
           <p>
             A laptop crash. Lost context. Hours spent reconstructing development state. 
-            The frustration led to a simple question: "What if development had weather?"
+            The frustration led to a simple question: &ldquo;What if development had weather?&rdquo;
           </p>
 
           <h3>The Journey: Day by Day</h3>
@@ -83,7 +83,7 @@ export default function SproutedSeedCaseStudy() {
                 adding git monitoring. No visible philosophy yet - just deep foundational work.
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                <strong>Key moment:</strong> "This could help everyone, not just me"
+                <strong>Key moment:</strong> &ldquo;This could help everyone, not just me&rdquo;
               </p>
             </div>
             
@@ -101,7 +101,7 @@ export default function SproutedSeedCaseStudy() {
             <div className="border-l-4 border-orange-400 pl-6">
               <h4 className="text-orange-600 dark:text-orange-400">Day 4: The Philosophy Tornado 🌪️</h4>
               <p>
-                <strong>6:00 AM:</strong> Shower thought - "Move fast and break things is OK if you're methodical about it"<br/>
+                <strong>6:00 AM:</strong> Shower thought - &ldquo;Move fast and break things is OK if you&apos;re methodical about it&rdquo;<br/>
                 <strong>10:00 AM:</strong> Tornado branch created<br/>
                 <strong>2:00 PM:</strong> Storm-Driven Development emerges<br/>
                 <strong>6:00 PM:</strong> First WEMA activation complete
@@ -252,7 +252,7 @@ export default function SproutedSeedCaseStudy() {
           
           <p>
             The Sprouted Seed is now open source and ready for your team to adapt. 
-            Remember: don't copy our exact approach - discover your own patterns and create your own Seed.
+            Remember: don&apos;t copy our exact approach - discover your own patterns and create your own Seed.
           </p>
           
           <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg my-8">

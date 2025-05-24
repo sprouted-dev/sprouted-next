@@ -153,7 +153,7 @@ export default function CaseStudiesPage() {
             More Case Studies Coming Soon
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-            We're working with teams to document their Storm-Driven Development journeys. 
+            We&apos;re working with teams to document their Storm-Driven Development journeys. 
             Each storm teaches us something new about channeling creative chaos.
           </p>
           
