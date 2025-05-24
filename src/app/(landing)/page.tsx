@@ -222,6 +222,190 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* Complete Protection Suite Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <span>🏆</span> Battle-Tested in Production
+            </div>
+            <h2 className="text-4xl font-bold mb-8 text-slate-900 dark:text-white">
+              Complete Protection Suite
+            </h2>
+            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+              Multi-layered protection for your development context. From session interruptions to system crashes, 
+              we&apos;ve got you covered at every level.
+            </p>
+          </div>
+
+          {/* Real-World Validation Story */}
+          <div className="sprouted-card p-8 mb-12 max-w-4xl mx-auto bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 border-green-200 dark:border-green-800">
+            <div className="flex items-start gap-4">
+              <span className="text-4xl">🎉</span>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">
+                  The Only Time Someone Was Excited About Hitting Usage Limits!
+                </h3>
+                <p className="text-slate-700 dark:text-slate-300 mb-4">
+                  On January 23, 2025, we hit Claude&apos;s usage limits while implementing usage limit recovery. 
+                  The feature we were building saved its own development session. You can&apos;t make this up!
+                </p>
+                <a 
+                  href="https://github.com/sprouted-dev/garden/blob/main/docs/case-studies/usage-limit-recovery-live.md" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sprouted hover:text-green-600 font-medium"
+                >
+                  Read the full story <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Protection Layers */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* Usage Limit Recovery */}
+            <div className="sprouted-card p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🔄</span>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Usage Limit Recovery</h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-300 mb-6">
+                Hit your daily limits? No problem. Comprehensive state preservation and instant recovery 
+                for new sessions.
+              </p>
+              <div className="space-y-3 text-sm">
+                <div className="bg-slate-800 dark:bg-black p-3 rounded-lg font-mono text-green-400">
+                  sprout weather --prepare-cold-handoff
+                </div>
+                <ul className="space-y-2 text-slate-600 dark:text-slate-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Zero context loss</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>28-second recovery</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Works with uncommitted changes</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Disaster Recovery */}
+            <div className="sprouted-card p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🛡️</span>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Disaster Recovery</h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-300 mb-6">
+                Corrupted files? Accidental deletion? Automatic shadow copies and rotating backups 
+                ensure instant recovery.
+              </p>
+              <div className="space-y-3 text-sm">
+                <div className="bg-slate-800 dark:bg-black p-3 rounded-lg font-mono text-green-400">
+                  sprout weather recover
+                </div>
+                <ul className="space-y-2 text-slate-600 dark:text-slate-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Shadow copies on every save</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>10 rotating backups</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Integrity verification</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Farm-Level Protection */}
+            <div className="sprouted-card p-8 relative">
+              <div className="absolute top-3 right-3 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 px-2 py-1 rounded text-xs font-medium">
+                NEW
+              </div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🚜</span>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Farm-Level Protection</h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-300 mb-6">
+                Protects non-git directories containing private docs and cross-repo context. 
+                Critical for multi-repo setups.
+              </p>
+              <div className="space-y-3 text-sm">
+                <div className="bg-slate-800 dark:bg-black p-3 rounded-lg font-mono text-green-400">
+                  sprout farm backup
+                </div>
+                <ul className="space-y-2 text-slate-600 dark:text-slate-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Private docs backup</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Cross-repo state</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Automatic rotation</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Protection Status Command */}
+          <div className="max-w-4xl mx-auto">
+            <div className="sprouted-card p-8 bg-gradient-to-r from-slate-50 to-gray-50 dark:from-slate-900/50 dark:to-gray-900/50">
+              <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">
+                Check Your Protection Status
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="relative bg-slate-800 dark:bg-black p-4 rounded-lg">
+                  <div className="text-gray-400 text-sm mb-2"># Garden-level protection</div>
+                  <div className="text-green-400 font-mono">sprout weather verify</div>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText('sprout weather verify')}
+                    className="absolute top-2 right-2 p-1 text-gray-400 hover:text-green-400 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
+                <div className="relative bg-slate-800 dark:bg-black p-4 rounded-lg">
+                  <div className="text-gray-400 text-sm mb-2"># Farm-level protection</div>
+                  <div className="text-green-400 font-mono">sprout farm protection-status</div>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText('sprout farm protection-status')}
+                    className="absolute top-2 right-2 p-1 text-gray-400 hover:text-green-400 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <p className="mt-6 text-sm text-slate-600 dark:text-slate-300">
+                Your work is protected at every level. Learn more about our 
+                <a href="https://github.com/sprouted-dev/garden/tree/main/docs/features" target="_blank" rel="noopener noreferrer" className="text-sprouted hover:underline ml-1">
+                  protection features →
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Installation Section */}
       <section id="install" className="py-20">
         <div className="container mx-auto px-4 lg:px-6">
